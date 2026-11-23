@@ -32,6 +32,7 @@
     <section class="controls" aria-label="Kaamerate filtrid">
       <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Otsi koha või kaamera nime järgi…" autocomplete="off"></label>
       <label class="select-wrap"><span class="sr-only">Kaugus</span><select id="radiusSelect"><option value="25">25 km raadiuses</option><option value="50">50 km raadiuses</option><option value="100">100 km raadiuses</option><option value="9999" selected>Kogu Eesti</option></select></label>
+      <label class="select-wrap"><span class="sr-only">Kaamera tüüp</span><select id="categorySelect"><option value="all">Kõik kaamerad</option><option value="road">Teekaamerad</option><option value="city">Linnaliiklus</option><option value="scenic">Linn, loodus ja sadamad</option></select></label>
       <button id="viewToggle" class="square" aria-label="Vaheta vaadet" title="Vaheta kaardi- ja loendivaadet">▦</button>
     </section>
 
@@ -55,7 +56,7 @@
     <button class="dialog-close" id="closeDialog" aria-label="Sulge">×</button>
     <div id="dialogBody"></div>
   </dialog>
-  <footer><span>Andmed: Transpordiamet / Tark Tee</span><span>Pildid uuenevad allika ajakava järgi</span></footer>
+  <footer><span>Andmed: Transpordiamet, Tallinna linn ja avalikud veebikaamerate pakkujad</span><span>Pildid uuenevad allika ajakava järgi</span></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>
