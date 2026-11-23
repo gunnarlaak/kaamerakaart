@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071612">
+  <meta name="description" content="Leia asukoha järgi avalikud Eesti tee- ja veebikaamerad.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Kaamerakaart</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Kaamerakaart – avaleht"><span class="brandmark" aria-hidden="true"></span><span>KAAMERA<em>KAART</em></span></a>
+    <div class="top-actions">
+      <span class="live-pill"><i></i><span id="cameraCount">—</span> avalikku kaamerat</span>
+      <button id="installBtn" class="ghost" hidden>Paigalda äpp</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AVALIK VAADE • EESTI</p>
+        <h1>Vaata, mis toimub<br><span>sinu ümber.</span></h1>
+        <p class="lede">Leia lähimad avalikud teekaamerad. Päris asukoht, värskeim kaader ja kiire teeolude ülevaade.</p>
+      </div>
+      <button id="locateBtn" class="locate"><span class="target" aria-hidden="true"></span><span><strong>Kasuta minu asukohta</strong><small>Leiab lähimad kaamerad</small></span></button>
+    </section>
+
+    <section class="controls" aria-label="Kaamerate filtrid">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Otsi koha või kaamera nime järgi…" autocomplete="off"></label>
+      <label class="select-wrap"><span class="sr-only">Kaugus</span><select id="radiusSelect"><option value="25">25 km raadiuses</option><option value="50">50 km raadiuses</option><option value="100">100 km raadiuses</option><option value="9999" selected>Kogu Eesti</option></select></label>
+      <button id="viewToggle" class="square" aria-label="Vaheta vaadet" title="Vaheta kaardi- ja loendivaadet">▦</button>
+    </section>
+
+    <section class="workspace">
+      <div id="map" class="map" aria-label="Kaamerate kaart">
+        <div class="map-grid"></div>
+        <div class="estonia-shape" aria-hidden="true"></div>
+        <div id="markers" class="markers"></div>
+        <div class="map-label north">Soome laht</div><div class="map-label west">Läänemeri</div>
+        <div class="map-note">Kaart on skemaatiline • kaugused on täpsed</div>
+      </div>
+      <aside class="panel">
+        <div class="panel-head"><div><p class="eyebrow">LÄHEDAL</p><h2 id="resultTitle">Avalikud kaamerad</h2></div><button id="refreshBtn" class="iconbtn" aria-label="Värskenda">↻</button></div>
+        <div id="status" class="status">Laadin Transpordiameti kaameraid…</div>
+        <div id="cameraList" class="camera-list"></div>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="cameraDialog">
+    <button class="dialog-close" id="closeDialog" aria-label="Sulge">×</button>
+    <div id="dialogBody"></div>
+  </dialog>
+  <footer><span>Andmed: Transpordiamet / Tark Tee</span><span>Pildid uuenevad allika ajakava järgi</span></footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>

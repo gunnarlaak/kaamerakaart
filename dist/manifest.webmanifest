@@ -1,0 +1,12 @@
+{
+  "name":"Kaamerakaart – avalikud kaamerad",
+  "short_name":"Kaamerakaart",
+  "description":"Leia enda lähedalt avalikud Eesti tee- ja veebikaamerad.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#071612",
+  "theme_color":"#071612",
+  "lang":"et",
+  "icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
